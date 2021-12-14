@@ -280,3 +280,59 @@ Add the correct display in Chrome and Safari.
 summary {
 	display: list-item;
 }
+
+/*
+=======
+THE END
+=======
+*/
+
+:root {
+	background-color: #282828;
+}
+
+:root, input, button {	
+	color: gainsboro;
+}
+
+html, body, #__next, .main {
+	height: 100%;
+	width: 100%;
+}
+
+#__next {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 3em;
+}
+
+.main {
+	display: grid;
+	place-items: center;
+	padding: 50px;
+}
+
+form {
+	max-width: 100%;
+	display: grid;
+	grid-template-columns: 4fr 2fr 1fr 3em
+}
+
+input, button {
+	width: 100%;
+	border: none;
+	background: #212121;
+	height: 3em;
+}
+
+button:hover {
+	background: darkgreen;
+}
+
+input {
+	padding-left: 1em;
+}
+
+input, button {
+	outline: none;
+}
