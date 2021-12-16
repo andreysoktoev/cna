@@ -309,13 +309,13 @@ html, body, #__next, .main {
 .main {
 	display: grid;
 	place-items: center;
-	padding: 50px;
+	padding: 25px;
 }
 
 form {
 	max-width: 100%;
 	display: grid;
-	grid-template-columns: 4fr 2fr 1fr 3em
+	grid-template-columns: 1fr 1fr 1fr 3em
 }
 
 input, button {
@@ -325,7 +325,7 @@ input, button {
 	height: 3em;
 }
 
-button:hover {
+button:focus {
 	background: darkgreen;
 }
 
