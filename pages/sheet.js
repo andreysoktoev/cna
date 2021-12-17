@@ -1,11 +1,17 @@
-import clientPromise from '../lib/mongodb'
+import useMongo from 'components/useMongo'
 
-export default function Home({ data }) {
+export default function Home() {
+
+  const { data, isLoading, isError } = useMongo()
+
+  if (isLoading) return <h1>...</h1>
+  if (isError) return <h1>There is something wrong with data</h1>
+
   return (
     <div className='table'>
       {data.map(d => (
         <>
-          <div className='date'>
+          <div className='row'>
             <div>
               <sub>{new Date().toLocaleDateString()}</sub>
             </div>
@@ -18,17 +24,4 @@ export default function Home({ data }) {
       ))}
     </div>
   )
-}
-
-export async function getStaticProps() {
-  try {
-    const client = await clientPromise
-    const collection = client.db().collection('skus')
-    const data = await collection.find().toArray()
-    return {
-      props: { data: JSON.parse(JSON.stringify(data)) }
-    }
-  } catch (e) {
-    console.error(e)
-  }
 }
