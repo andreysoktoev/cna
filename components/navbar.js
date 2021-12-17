@@ -9,7 +9,9 @@ export default function Navbar() {
       <div>
         <Link href='/sheet'><a>sheet</a></Link>
       </div>
-      <button>➕</button>
+      <div>
+        <Link href='/add'><a>add</a></Link>
+      </div>
     </nav>
   )
 }

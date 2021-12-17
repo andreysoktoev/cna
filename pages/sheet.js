@@ -20,7 +20,7 @@ export default function Home({ data }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const client = await clientPromise
     const collection = client.db().collection('skus')
