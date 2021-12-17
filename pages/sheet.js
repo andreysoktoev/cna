@@ -1,10 +1,11 @@
 import useMongo from 'components/usemongo'
+import Spinner from 'components/spinner'
 
 export default function Home() {
 
   const { data, isLoading, isError } = useMongo()
 
-  if (isLoading) return <h1>...</h1>
+  if (isLoading) return <Spinner />
   if (isError) return <h1>There is something wrong with data</h1>
 
   return (
