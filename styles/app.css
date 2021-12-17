@@ -1,6 +1,6 @@
 :root {
-	--signal-black: #282828;
-	--21: #212121;
+  --signal-black: #282828;
+  --21: #212121;
   background-color: var(--signal-black);
 }
 
@@ -24,33 +24,48 @@ body,
 }
 
 main {
-	padding: 20px;
-	overflow: auto;
-	display: grid;
-	place-items: center;
+  padding: 20px;
+  overflow: auto;
+  display: grid;
+  place-items: center;
 }
 
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-	background: var(--21);
-	place-items: center;
+  background: var(--21);
+  place-items: center;
 }
 
 nav a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .table {
-	width: min(100%, 428px);
+  width: min(100%, 428px);
 }
 
 .row {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .card {
-	display: grid;
-	grid-template-columns: 1fr auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+input {
+  background: var(--21);
+  border: none;
+  padding: 1em;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type='submit']:focus {
+  background: darkgreen;
 }

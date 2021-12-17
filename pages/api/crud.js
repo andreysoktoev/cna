@@ -14,8 +14,7 @@ export default async function handler(req, res) {
     case 'POST':
       try {
         await collection.insertOne(req.body)
-        res.redirect('/')
-        console.log('+')
+        res.redirect('/sheet')
       } catch (error) {
         res.status(400).json({ success: false })
       }
