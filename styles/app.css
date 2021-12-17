@@ -12,8 +12,7 @@ button {
 
 html,
 body,
-#__next,
-.main {
+#__next {
   height: 100%;
   width: 100%;
 }
@@ -25,14 +24,13 @@ body,
 }
 
 main {
-	overflow: auto;
 	padding: 20px;
+	overflow: auto;
 	display: grid;
 	place-items: center;
 }
 
 nav {
-  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 	background: var(--21);
@@ -48,8 +46,7 @@ nav a {
 	width: min(100%, 428px);
 }
 
-.date {
-	max-width: 428px;
+.row {
 	margin-bottom: 1em;
 }
 

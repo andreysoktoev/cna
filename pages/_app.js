@@ -1,6 +1,6 @@
-import '../styles/mn.css'
-import '../styles/app.css'
-import Layout from '../components/layout'
+import 'styles/mn.css'
+import 'styles/app.css'
+import Layout from 'components/layout'
 
 function App({ Component, pageProps }) {
   return (

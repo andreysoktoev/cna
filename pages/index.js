@@ -1,6 +1,12 @@
-import clientPromise from '../lib/mongodb'
+import useMongo from 'components/useMongo'
 
-export default function Home({ data }) {
+export default function Home() {
+
+  const { data, isLoading, isError } = useMongo()
+
+  if (isLoading) return <>...</>
+  if (isError) return <>Ошибка загрузки данных</>
+
   return (
     <div>
       {data.map(d => (
@@ -8,17 +14,4 @@ export default function Home({ data }) {
       ))}
     </div>
   )
-}
-
-export async function getStaticProps() {
-  try {
-    const client = await clientPromise
-    const collection = client.db().collection('skus')
-    const data = await collection.find().toArray()
-    return {
-      props: { data: JSON.parse(JSON.stringify(data)) }
-    }
-  } catch (e) {
-    console.error(e)
-  }
 }

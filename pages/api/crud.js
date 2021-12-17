@@ -1,4 +1,4 @@
-import clientPromise from '../../lib/mongodb'
+import clientPromise from 'lib/mongo'
 
 export default async function handler(req, res) {
   const { method } = req
@@ -7,6 +7,10 @@ export default async function handler(req, res) {
   const collection = client.db().collection('skus')
 
   switch (method) {
+    case 'GET':
+      const data = await collection.find().toArray()
+      res.json(data)
+      break
     case 'POST':
       try {
         await collection.insertOne(req.body)
