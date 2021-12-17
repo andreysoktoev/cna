@@ -1,4 +1,4 @@
-import useMongo from 'components/useMongo'
+import useMongo from 'components/usemongo'
 
 export default function Home() {
 
