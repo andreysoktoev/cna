@@ -2,9 +2,19 @@ import clientPromise from '../lib/mongodb'
 
 export default function Home({ data }) {
   return (
-    <div>
+    <div className='table'>
       {data.map(d => (
-        <div key={d._id}>{d.item + ', ' + d.currency + ': ' + d.sum}</div>
+        <>
+          <div className='date'>
+            <div>
+              <sub>{new Date().toLocaleDateString()}</sub>
+            </div>
+            <div className='card'>
+              <div>{d.item}</div>
+              <div>{d.sum + ' ' + d.currency.toUpperCase()}</div>
+            </div>
+          </div>
+        </>
       ))}
     </div>
   )

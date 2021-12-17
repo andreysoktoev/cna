@@ -1,7 +1,13 @@
-import '../styles/modern-normalize.css'
+import '../styles/mn.css'
+import '../styles/app.css'
+import Layout from '../components/layout'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
-export default MyApp
+export default App
