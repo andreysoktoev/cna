@@ -6,19 +6,24 @@ export default function Add() {
   return (
     <form className='table' method='post' action='/api/crud'>
       <div className='row'>
-        <input type='text' name="item" placeholder='item' required></input>
-      </div>
-      <div className='row'>
-        <input type='text' name="currency" placeholder='currency' required></input>
-      </div>
-      <div className='row'>
-        <input type='text' name="sum" placeholder='sum' required></input>
+        <input type='text' name='item' placeholder='item' required></input>
       </div>
       <div className='row'>
         <input
-          type='text' name="date"
-          placeholder={YYYY + '/' + MM + '/' + DD}
+          type='text'
+          name='currency'
+          placeholder='currency'
           required
+        ></input>
+      </div>
+      <div className='row'>
+        <input type='text' name='sum' placeholder='sum' required></input>
+      </div>
+      <div className='row'>
+        <input
+          type='text'
+          name='date'
+          placeholder={YYYY + '/' + MM + '/' + DD}
         ></input>
       </div>
       <input type='submit' value='submit' />
