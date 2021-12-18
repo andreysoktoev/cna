@@ -1,10 +1,10 @@
 import axios from 'axios'
 import useSWR from 'swr'
 
-const fetcher = () => axios.get('/api/crud').then(res => res.data)
+const fetcher = url => axios(url).then(res => res.data)
 
-export default function useMongo() {
-  const { data, error } = useSWR('/api/crud', fetcher)
+export default function useMongo(page) {
+  const { data, error } = useSWR(`/api/crud?page=${page}`, fetcher)
   return {
     data: data,
     isLoading: !error && !data,

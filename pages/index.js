@@ -4,7 +4,7 @@ import Error from 'components/error'
 
 export default function Home() {
 
-  const { data, isLoading, isError } = useMongo()
+  const { data, isLoading, isError } = useMongo('home')
 
   if (isLoading) return <Spinner />
   if (isError) return <Error />
@@ -16,4 +16,5 @@ export default function Home() {
       ))}
     </div>
   )
+  
 }
