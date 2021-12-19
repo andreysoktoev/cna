@@ -8,24 +8,48 @@ export default function Home() {
   if (isLoading) return <Spinner />
   if (isError) return <Error />
 
+  const rub = {
+    IDR: 0.0052,
+    RUB: 1,
+    USD: 74.13
+  }
+
   const minus = data
-    .map(i => Number(i.sum) < 0 ? Number(i.sum) : 0)
+    .map(i => i.sum < 0 ? i.sum * rub[i.currency] : 0)
     .reduce((a, b) => a + b)
 
   const plus = data
-    .map(i => Number(i.sum) > 0 ? Number(i.sum) : 0)
+    .map(i => i.sum > 0 ? i.sum * rub[i.currency] : 0)
+    .reduce((a, b) => a + b)
+
+  const total = data
+    .map(i => i.sum * rub[i.currency])
     .reduce((a, b) => a + b)
 
   return (
-    <>
-      <div>
+    <div className='table'>
+      <div className='row'>
         {data.map(d => (
-          <div key={d._id}>{d.item + ', ' + d.currency + ': ' + d.sum}</div>
+          <div className='card' key={Math.random()}>
+            <div>{d.item + ', ' + d.currency + ': '}</div>
+            <div>{d.sum.toLocaleString()}</div>
+          </div>
         ))}
       </div>
-      <div>{minus}</div>
-      <div>{plus}</div>
-      <div>{minus + plus}</div>
-    </>
+      <div className='row'>
+        <div className='card'>
+          <div></div>
+          <div>{minus.toLocaleString()}</div>
+        </div>
+        <div className='card'>
+          <div></div>
+          <div>{plus.toLocaleString()}</div>
+        </div>
+      </div>
+      <div className='card'>
+        <div>Total</div>
+        <div>{total.toLocaleString()}</div>
+      </div>
+    </div>
   )
 }

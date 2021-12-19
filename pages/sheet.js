@@ -11,15 +11,13 @@ export default function Home() {
   return (
     <div className='table'>
       {data.map(d => (
-        <>
-          <div className='row'>
-            <sub>{new Date(d.date).toLocaleDateString()}</sub>
-            <div className='card'>
-              <div>{d.item}</div>
-              <div>{d.sum + ' ' + d.currency.toUpperCase()}</div>
-            </div>
+        <div key={Math.random()} className='row'>
+          <sub>{new Date(d.date).toLocaleDateString()}</sub>
+          <div className='card'>
+            <div>{d.item}</div>
+            <div>{d.sum.toLocaleString() + ' ' + d.currency.toUpperCase()}</div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   )
