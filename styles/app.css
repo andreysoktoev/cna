@@ -1,5 +1,4 @@
 :root {
-  background-color: #282828;
   --21: #212121;
 }
 
@@ -52,6 +51,7 @@ nav a {
 .card {
   display: grid;
   grid-template-columns: 1fr auto;
+  font-feature-settings: 'tnum';
 }
 
 input {
