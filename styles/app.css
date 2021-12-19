@@ -1,7 +1,10 @@
+:root {
+  background: #282828;
+}
+
 @import url('https://rsms.me/inter/inter.css');
 
 :root {
-  background-color: #282828;
 	font-family: Inter, sans-serif;
   font-size: 16px;
   letter-spacing: -0.011em;
