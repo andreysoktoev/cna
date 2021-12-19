@@ -1,4 +1,3 @@
-import 'styles/mn.css'
 import 'styles/app.css'
 import Layout from 'components/layout'
 

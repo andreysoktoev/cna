@@ -1,11 +1,36 @@
+@import url('https://rsms.me/inter/inter.css');
+
 :root {
+  background-color: #282828;
+	font-family: Inter, sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.011em;
+  line-height: 22px;
   --21: #212121;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
 }
 
 :root,
 input,
 button {
   color: gainsboro;
+}
+
+body {
+	margin: 0;
+}
+
+sub {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+  bottom: -0.25em;
 }
 
 html,
@@ -57,9 +82,13 @@ nav a {
 input {
   background: var(--21);
   border: none;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: inherit;
+	margin: 0;
   padding: 1em;
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
 input:focus {

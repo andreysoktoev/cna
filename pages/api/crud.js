@@ -18,12 +18,15 @@ export default async function handler(req, res) {
               {
                 $group: {
                   _id: {
-                    item: { $toLower: '$item' },
-                    currency: { $toLower: '$currency' }
+                    item: { $toUpper: '$item' },
+                    currency: { $toUpper: '$currency' }
                   },
                   sum: { $last: '$sum' },
                   date: { $last: '$date' }
                 }
+              },
+              {
+                $match: { sum: { $ne: 0 } }
               },
               {
                 $project: {
@@ -34,12 +37,12 @@ export default async function handler(req, res) {
                   sum: 1
                 }
               },
-              { $sort: { item: 1 } }
+              { $sort: { item: 1, currency: 1 } }
             ])
             .toArray()
           break
         case 'sheet':
-          data = await collection.find({}, { sort: { date: 1 } }).toArray()
+          data = await collection.find({}, { sort: { date: -1 } }).toArray()
           break
       }
       res.json(data)
